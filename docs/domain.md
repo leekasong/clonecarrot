@@ -1,20 +1,29 @@
-# clone carrot market domain
+# define the business domain
 
-## user management
+## domain event
 
-- login/logout
-- sign up
+### user management
 
-
-## feed management
-
-- feed upload
-- feed update
-- feed load
-- feed marked
-
-
-## neighborhood management
-
-- valid neighborhood check
+- signed up new account
+- loged in with existing account
+- found the lost password
+- loged out
+- invalidated the neighborhood
 - set up the neighborhood
+
+### feed management
+
+- A user uploaded A feed
+- A user updated A feed as new version
+- A feed was deleted
+- A feed went up on the top of feed list
+- the feeds listed
+- A feed was read
+- A feed was marked with heart
+- marked feeds was listed
+- feeds was searched
+
+
+## Strategic Design
+
+[design diagram](https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=carrot-market-command.drawio#R7Z1Nk6I4GMc%2FTY5uERIgHEGd3cue5rBVe9miBV9qUXqV3rbn029CEoT42INTLtE4p8YEUZ9fEv7PC2lEptvjr%2Fvsdf17lRcl8r38iMgM%2Bb4f%2BYz%2FES0fqgWHWLas9ptctnUavm6%2BFarRU61vm7w49E6sq6qsN6%2F9xkW12xWLuteW7ffVe%2F%2B0ZVX2P%2FU1WxVnDV8XWXne%2Bscmr9eylfnRqf23YrNa60%2FGYSx7tpk%2BWf2SwzrLq%2FdOE5kjMt1XVS2PtsdpUQrrabvI93250Nt%2BsX2xq4e8gQRldlwcv82mf%2F25Pvz58oGjYqKu8m9WvqkfjOYzFCeITdF8iuIUxfyqHponKPUQ85rGOWJBczBDKW16m9Ni1jRGiDHRwlKU0F%2FUb68%2FtEH31dsuL8R3woik7%2BtNXXx9zRai952PId62rrel6l5uynJaldW%2BeS%2FJs4ItF7z9UO%2Brv4tOT7hgxcuS96jfU%2Bzr4njRULg1Px%2B4RbUt6v0HP0W9IVbA1JDFRL1%2BP%2FHHGuq6wz5UbZkacqv2yicq%2FECBuQKSD0DixsUonjZgIpQyzYM5DIb1wZDYNhgyBIwvJ02AGFVTihGHIWGvT8mPbFNiACW5ijVAuKU5LskhjZvGVC12qtFvmMwEIjG%2Fkn6vp2kzxGLHYAbBva2F8Y1h8vfGuncmZmkiCafiBDV1m4kqJnaMYqpbpuqA6TmcEnUan96OYfc929hx8MNCRUJMPAG3xaTOZOLk05k3BLVki2IBgnphAeX2vQmoCbm3%2BYlDcIIyHyUSVCKmkTS5vn93TM4%2FgSv74npzL5c%2BbO48fAmD8EbmNhRIHJxZOwKMHf1vxo5AAWIsfOernpwSvDedn6bB441%2Ben%2BjH9Yabox%2BYo7%2Bc2uPOvp9yHkF%2FaK%2B9n68gT7xjfuxdU3tQz6pKwN9EhnmprZH%2BiBHs40APOAAp32L23ftferyADdCXCS0PcAheZ8IrS4XbqnelWinStQkoWAhtYz0%2B8QB50KF0uF6XniCF6eCd73vFRQspxAb5r%2BQ8EZsQmMqQEu9NyobSNE%2FJxsc3RsbyAF4UjaGOm0zSPbgQM7Ak8IJjRsOoKjGhUMAAeuHZS0sVPEf1TVw%2BM9bpTsmhyZFmfATqPd6PHXyo5X4%2B3Yo9kik%2F3bZqtgK%2B6jL8q8pryzPO6PIrVv3UfWR7KpdYfBTTVm5We34ywX%2FNP7hJBWsNousTFTHdpPn5SUx0h89eXZYt1LxFlLDmJYTDMQSW1eyi77Ve7dnD8npmYjtiqgun3RE6%2Bo2cCyD%2BUFHdbenORXw10KsvcHZ1uEE0uHfY8UhSCBt1NchRNgIBjBmndGF4LzBqDlI2gSKzpuc5hNtXCqnYBmCEWNIlYwLC5Lz35tQnFHqdRIuTjEKjAkVA97wyIwgWf85I60ce2ox6QT7A60lufzEmpcmGHey2TIjlsYNX6dAM69%2Fd8P2EwYE8hE%2BJ91kqWPWB8wbsQacAoPDIYrUSE6H9u9%2FUFHCQEwSzVT3%2Frxl%2BhOKSX%2BaetZvmtpd%2FRGFkzTZV0%2Bvve7hMvUo5NuPS%2BtCVevnPoOPkpn2GVyTOKcppCFZd%2BwoEIA5h%2FS5731LECMluuJ7c7DpoGAI6Fc%2FkPnvxlemg%2BIZ31f0ZyLggWDouWAWl9p3jumgSMZwFf54UAi5N3VNBwUswDjF45mfGtXz9mMRdFAsQi5JDOtyXNZksR7O%2FCG7uwgBHRQhAB2Nx7P%2FJKB350xccO5BfdT3IR7P%2Fiy%2BNzdBawQ367Aw6a83oe1CrABynV0xt2%2Bs7qHtus4A8oFdsTYxaj5i37a1IU%2FXFWszs2zQ%2BkricgGtWaSJoaqWcc0Nea6umNusV8YeUHk5rrmdfsxtgAgf19qQD%2BqMtQNTdANhsHHNfY3L6Xbh6sSMh0XQkymjVq4Ggx1S5%2BmYZcXYg8Jlo9LRX2DoUtV%2FDj2hnSoPMCXw%2BEF%2FcnfZ%2FdBlp5ev5oYfZls7hVd6vZ%2Fs3%2BD28jYhZmViYH15G5wtdp6Ob6RqGBDfGBnO4Nyy83CwUe8ChfpGhjM4tew8nNBMckJZhnHhXOnOP%2B0tyczPhfYXvQt74JDLmyJ%2B8jCXLOu4UI57sSqHNMyNcvznqtHF1gsVwiv33vnped0BM3g7P0c9L4yB1XJU10tf%2BOd97lrXC8zwjHuniwaVtT8FHmbOLCghNDIdKKrxnHSwZ%2BCJrHtfEeR9cQH2RWz%2FKg5oY3PjkX8tHTkmfuyYhDMzG%2BCGKaOqgQjyws4gwWyMB%2BQi9ZhyQtx7XnlCjKfKifUabQboCrXtyeE12%2FUsfNVuKsuCo7iwm4q88nPtphIYBYMBsLKOvJsKg258w2btAzpR5tPH9ldN5nJZ24SapT%2Bh5T2X2ZV1bc%2FrQvnUiDdYz14xOFYILFVPQMd4EpUAsYlb0eEvT%2F%2FnqOnr%2FLsoMv8P)
